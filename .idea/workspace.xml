@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77b93958-1a98-4b44-ac31-7ec64a9579fd" name="Changes" comment="new">
-      <change afterPath="$PROJECT_DIR$/Game/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/hero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="rpg" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,8 +103,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>

@@ -1,2 +1,4 @@
-dict = {"1" : "a", 2: "q", 3: "we"}
-print( dict["1k"] )
+from Game.hero import hero
+
+player = hero("qw", "er", "uy")
+print(player.mapForest)

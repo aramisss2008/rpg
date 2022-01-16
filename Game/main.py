@@ -1,15 +1,7 @@
 from Game.func import load
 from hero import hero
 
-print("hello friend")
-print("choose hero-1")
-print("create hero-2")
-code = int(input())
-if code ==1:
-    print("write name")
-    chooseName = input() #TODO: предлогать персонажей
-    load(chooseName + ".txt")
-if code ==2:
+def createHero():
     print(" enter name")
     name = input()
 
@@ -25,7 +17,7 @@ if code ==2:
     class_h = dict.get(num)
 
     print("chose race: 1.orc , 2.human, 3.dwarf")
-    dict1 = {"1" : "orc", "2" : "human", "3" : "dwarf"}
+    dict1 = {"1": "orc", "2": "human", "3": "dwarf"}
     num1 = input()
     while 1:
         if dict1.get(num1) == None:
@@ -35,7 +27,31 @@ if code ==2:
             break
     racem = dict1.get(num1)
 
-    goldm = 0
-    lvl = 1
-    myHero = hero(name,class_h,goldm,racem,lvl)
+    myHero = hero(name, class_h, racem)
     myHero.save()
+    return myHero
+
+print("hello friend")
+print("choose hero-1")
+print("create hero-2")
+
+code = int(input())
+#toDo proverka
+if code ==1:
+    print("write name")
+    chooseName = input() #TODO: предлогать персонажей
+    player = load(chooseName + ".txt")
+if code ==2:
+    player = createHero()
+
+print("chose map")
+print("choose forest-1")
+print("create ruins-2")
+print("create kingdom-3")
+code = int(input())
+
+#todo: на какой уровень зайти
+
+
+
+
