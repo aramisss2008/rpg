@@ -1,10 +1,22 @@
 from Game.func import load
 from hero import hero
+import os.path
 
-def createHero():
+name_prov = True
+print("hello friend")
+print("choose hero-1")
+print("create hero-2")
+code = int(input())
+if code ==1:
+    print("write name")
+    chooseName = input() #TODO: предлогать персонажей
+    load(chooseName + ".txt")
+if code ==2:
     print(" enter name")
     name = input()
-
+    if name_prov == os.path.exists(name +'.txt ') :
+        print("Такое имя уже существует введите другое имя")
+    name = input()
     print("chose class: 1. lancer 2. wizard 3. archer, 4. summoner")
     dict = {"1": "lancer", "2": "wizard", "3": "archer", "4": "summoner"}
     num = input()
@@ -17,7 +29,7 @@ def createHero():
     class_h = dict.get(num)
 
     print("chose race: 1.orc , 2.human, 3.dwarf")
-    dict1 = {"1": "orc", "2": "human", "3": "dwarf"}
+    dict1 = {"1" : "orc", "2" : "human", "3" : "dwarf"}
     num1 = input()
     while 1:
         if dict1.get(num1) == None:
@@ -27,31 +39,7 @@ def createHero():
             break
     racem = dict1.get(num1)
 
-    myHero = hero(name, class_h, racem)
+    goldm = 0
+    lvl = 1
+    myHero = hero(name,class_h,goldm,racem,lvl)
     myHero.save()
-    return myHero
-
-print("hello friend")
-print("choose hero-1")
-print("create hero-2")
-
-code = int(input())
-#toDo proverka
-if code ==1:
-    print("write name")
-    chooseName = input() #TODO: предлогать персонажей
-    player = load(chooseName + ".txt")
-if code ==2:
-    player = createHero()
-
-print("chose map")
-print("choose forest-1")
-print("create ruins-2")
-print("create kingdom-3")
-code = int(input())
-
-#todo: на какой уровень зайти
-
-
-
-
