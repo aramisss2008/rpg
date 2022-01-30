@@ -2,21 +2,27 @@ from Game.func import load
 from hero import hero
 import os.path
 
-name_prov = True
 print("hello friend")
 print("choose hero-1")
 print("create hero-2")
 code = int(input())
+
 if code ==1:
     print("write name")
     chooseName = input() #TODO: предлогать персонажей
-    load(chooseName + ".txt")
+    myHero = load(chooseName + ".txt")
+
 if code ==2:
     print(" enter name")
     name = input()
-    if name_prov == os.path.exists(name +'.txt ') :
-        print("Такое имя уже существует введите другое имя")
-    name = input()
+
+    while 1:
+        if os.path.exists(name + '.txt '):
+            print("Такое имя уже существует введите другое имя")
+            name = input()
+        else:
+            break
+
     print("chose class: 1. lancer 2. wizard 3. archer, 4. summoner")
     dict = {"1": "lancer", "2": "wizard", "3": "archer", "4": "summoner"}
     num = input()
@@ -43,3 +49,5 @@ if code ==2:
     lvl = 1
     myHero = hero(name,class_h,goldm,racem,lvl)
     myHero.save()
+
+myHero

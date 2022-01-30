@@ -16,7 +16,7 @@ rad2 = Radiobutton(window,text='Второй', value=6, variable=selected)
 
 lbl = Label(window)
 
-rad3.grid(column=0, row=30)
+#rad3.grid(column=0, row=30)
 btn.grid(column=1, row=0)
 lbl.grid(column=0, row=0)
 window.mainloop()

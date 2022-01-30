@@ -2,14 +2,20 @@ from tkinter import *
 from tkinter.ttk import Radiobutton
 
 def clicked():
-    lbl.configure(window,text='choose hero', value=1, variable=selected) (window,text='create hero', value=2, variable=selected)
+    #lbl.configure(window,text='choose hero', value=1, variable=selected) (window,text='create hero', value=2, variable=selected)
+    rad3.destroy()
+    rad4.destroy()
+    lbl2 = Label(window, text="hello friend")
+    lbl2.grid(column=0, row=30)
+
+
 #rad1 = Radiobutton(window,text='choose hero', value=1, variable=selected)
 #rad1.grid(column=0, row=0)
 #rad2.grid(column=1, row=0)
 
 window = Tk()
 window.title("rpg")
-window.geometry('2000x1500')
+window.geometry('700x700')
 lbl = Label(window, text="hello friend")
 btn = Button(window, text="Play!", command=clicked)
 btn.grid(column=0, row=0)
