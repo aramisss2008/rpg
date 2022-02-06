@@ -45,9 +45,8 @@ if code ==2:
             break
     racem = dict1.get(num1)
 
-    goldm = 0
-    lvl = 1
-    myHero = hero(name,class_h,goldm,racem,lvl)
+
+    myHero = hero(name,class_h,racem)
     myHero.save()
 
 myHero

@@ -5,6 +5,10 @@ class hero():
     goldm = 0
     racem = "human"
     lvl = 1
+    strong = 1
+    agility = 1
+    hp = 100
+    mana = 100
     mapForest = [1]
     mapRuins = [1]
     mapKingdom = [1]
@@ -16,6 +20,26 @@ class hero():
         self.goldm = goldm
         self.racem = racem
         self.lvl = lvl
+
+        if class_h == "lancer":
+            self.strong = 5
+            self.hp = 300
+        if class_h=="archer":
+            self.strong = 4
+            self.hp = 150
+            self.agility = 3
+        if class_h == "summoner":
+            self.strong = 3
+        if class_h =="wizard":
+            self.strong = 4
+            self.hp = 170
+            self.mana = 150
+        if racem == "orc":
+            self.hp += 100 #TODO:
+
+    def specialattack(self):
+        if self.racem == "orc":
+            return 100
 
     def printFeature(self):
         print(self.name)
