@@ -1,3 +1,6 @@
+from random import randint
+
+
 class hero():
 
     name = "hero"
@@ -54,5 +57,18 @@ class hero():
         f.write(str(self.goldm)+".")
         f.write(str(self.lvl))
 #todo: добавить сохранение карт
+
+
+    def fight(self, enemy):
+        fightPointHero = 0
+        fightPointEnemy = 0
+        while enemy.hp > 0 and self.hp > 0:
+            fightPointHero += randint(1,12)
+            fightPointEnemy += randint(1,12)
+            print(fightPointHero)
+            print("1 - special attack : 10")
+            print("2 - attack 1: 1")
+            print("3 - attack 2 : 2")
+
 
 

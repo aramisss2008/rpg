@@ -15,5 +15,5 @@ class shadow1(enemy):
         self.strength = 2
         print("krik")
 
-    def attack(self, power):
+    def attack(self, power=0):
         return 100+power

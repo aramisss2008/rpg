@@ -1,6 +1,7 @@
 from Game.func import load
 from hero import hero
 import os.path
+from enemy import *
 
 print("hello friend")
 print("choose hero-1")
@@ -49,4 +50,5 @@ if code ==2:
     myHero = hero(name,class_h,racem)
     myHero.save()
 
-myHero
+wrag = shadow1()
+myHero.fight(wrag)
