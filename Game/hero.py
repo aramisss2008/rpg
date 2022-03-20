@@ -36,13 +36,19 @@ class hero():
         if class_h =="wizard":
             self.strong = 4
             self.hp = 170
-            self.mana = 150
+            #self.mana = 150
         if racem == "orc":
             self.hp += 100 #TODO:
 
     def specialattack(self):
         if self.racem == "orc":
             return 100
+
+    def attack1(self):
+        return 2
+
+    def attack2(self):
+        return 1
 
     def printFeature(self):
         print(self.name)
@@ -63,12 +69,55 @@ class hero():
         fightPointHero = 0
         fightPointEnemy = 0
         while enemy.hp > 0 and self.hp > 0:
+
+            print("hp hero:" + str(self.hp))
+            print("hp enemy:" + str(enemy.hp))
+
             fightPointHero += randint(1,12)
             fightPointEnemy += randint(1,12)
-            print(fightPointHero)
-            print("1 - special attack : 10")
-            print("2 - attack 1: 1")
-            print("3 - attack 2 : 2")
+            print("Point: " + str(fightPointHero))
+            print("1 - special attack cost: 12")
+            print("2 - attack 1 cost: 1")
+            print("3 - attack 2 cost: 2")
+            num = int(input())
+            while 1:
+                if num >= 1 and num <=3:
+                    if num ==1 and fightPointHero <12:
+                        print("you can't use it!")
+                        num = int(input())
+                    elif num == 3 and fightPointHero <2:
+                        print("you can't use it!")
+                        num = int(input())
+                    else:
+                        break
+                else:
+                    print("write correct option")
+                    num = int(input())
+            if num == 2:
+                enemy.hp -= self.attack1()
+                fightPointHero -= 1
+            elif num == 1:
+                enemy.hp -= self.specialattack()
+                fightPointHero -= 12
+            else:
+                enemy.hp -= self.attack2()
+                fightPointHero -= 2
+
+            if fightPointEnemy >= 12:
+                self.hp -= enemy.attack2()
+                fightPointEnemy -= 12
+            elif fightPointEnemy >= 8:
+                self.hp -= enemy.attack1()
+                fightPointEnemy -= 8
+            else:
+                self.hp -= enemy.attack()
+                fightPointEnemy -= 1
+
+        if self.hp <= 0:
+            print("you died")
+        else:
+            print("you win")
+
 
 
 

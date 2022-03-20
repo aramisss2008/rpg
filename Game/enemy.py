@@ -4,8 +4,11 @@ class enemy():
     name = ""
 
     def attack(self):
-        return 0
-
+        return 3
+    def attack1(self):
+        return 10
+    def attack2(self):
+        return 15
     def dodge(self):
         return 0
 
