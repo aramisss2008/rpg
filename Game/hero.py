@@ -1,5 +1,5 @@
 from random import randint
-
+FP_SpecialAttack = 12 #FP - Figth Point
 
 class hero():
 
@@ -16,7 +16,7 @@ class hero():
     mapRuins = [1]
     mapKingdom = [1]
 
-    def __init__(self, name, class_h, racem, goldm = 100, lvl = 1):
+    def __init__(self, name, class_h, racem, goldm=100, lvl=1):
         """Constructor"""
         self.name = name
         self.class_h = class_h
@@ -25,24 +25,53 @@ class hero():
         self.lvl = lvl
 
         if class_h == "lancer":
-            self.strong = 5
-            self.hp = 300
-        if class_h=="archer":
-            self.strong = 4
-            self.hp = 150
+            self.strong = 0.5
+            self.hp = 30
+        if class_h == "archer":
+            self.strong = 0.4
+            self.hp = 15
             self.agility = 3
         if class_h == "summoner":
-            self.strong = 3
-        if class_h =="wizard":
-            self.strong = 4
-            self.hp = 170
-            #self.mana = 150
+            self.strong = 0.3
+            self.agility = 2.3
+        if class_h == "wizard":
+            self.strong = 0.4
+            self.hp = 17
+            self.mana = 150
         if racem == "orc":
-            self.hp += 100 #TODO:
+            self.hp += 100  # TODO:
+            self.strong += 0.2
+            self.agility -= 1
+        if racem == "gnome":
+            self.strong -= 1.5
+            self.hp -= 5
+            self.agility += 2
 
     def specialattack(self):
-        if self.racem == "orc":
-            return 100
+        if self.racem == "lancer" and self.class_h == "gnome":
+            return
+        elif self.racem or self.class_h == "lancer":
+            return
+
+    def specialattack(self):
+        if self.racem or self.class_h == "lancer":
+            return
+
+    def specialattack(self):
+        if self.racem or self.class_h == "lancer":
+            return
+
+    def specialattack(self):
+        if self.racem or self.class_h == "lancer":
+            return
+
+    def specialattack(self):
+        if self.racem or self.class_h == "lancer":
+            return
+
+    def specialattack(self):
+        if self.racem or self.class_h == "lancer":
+            return
 
     def attack1(self):
         return 2
@@ -82,7 +111,7 @@ class hero():
             num = int(input())
             while 1:
                 if num >= 1 and num <=3:
-                    if num ==1 and fightPointHero <12:
+                    if num ==1 and fightPointHero < FP_SpecialAttack:
                         print("you can't use it!")
                         num = int(input())
                     elif num == 3 and fightPointHero <2:
